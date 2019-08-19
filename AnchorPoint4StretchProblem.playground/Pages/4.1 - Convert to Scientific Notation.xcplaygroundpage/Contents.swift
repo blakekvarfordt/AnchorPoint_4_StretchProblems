@@ -12,4 +12,25 @@
 
 import UIKit
 
+
+
+func convertToScientificNotation(float: Float) -> String {
+    
+    let formatter = NumberFormatter()
+    formatter.numberStyle = .scientific
+    if float >= 0 {
+        formatter.positiveFormat = "0.###E0"
+    } else {
+        formatter.negativeFormat = "0.###E0"
+    }
+    formatter.exponentSymbol = " * 10 ˆ"
+    if let scientificFormatted = formatter.string(for: float) {
+        print(scientificFormatted)
+        }
+ 
+    return String(float)
+}
+
+convertToScientificNotation(float: -320.333333)
+
 //: [Next](@next)
